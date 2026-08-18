@@ -8,7 +8,6 @@
   --line: #c6baa5;
   --accent: #c8664b;
   --accent-dark: #a44f39;
-  --olive: #68715a;
   --olive-dark: #4e5844;
   --error: #9d3f45;
 }
@@ -77,23 +76,32 @@ h1,
   color: var(--accent-dark);
 }
 
+/* About block: deliberately restrained to the left half of the page. */
 .about-strip {
-  display: flex;
-  align-items: center;
+  width: min(610px, 52%);
+  display: grid;
+  grid-template-columns: 94px minmax(0, 1fr);
   gap: 18px;
-  max-width: 790px;
-  padding: 26px 0 24px;
+  align-items: stretch;
+  padding: 24px 0 26px;
 }
 
 .avatar {
-  flex: 0 0 auto;
-  width: 72px;
-  height: 72px;
+  width: 94px;
+  height: 100%;
+  min-height: 94px;
+  max-height: 112px;
   object-fit: cover;
   object-position: center 33%;
   image-rendering: pixelated;
   border: 1px solid var(--ink);
   box-shadow: 4px 4px 0 rgba(41, 41, 39, .10);
+}
+
+.about-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .about-strip h2,
@@ -106,14 +114,14 @@ h1,
 
 .about-strip h2 {
   color: var(--accent-dark);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .about-strip p {
-  margin: 5px 0 0;
+  margin: 6px 0 0;
   color: var(--muted);
   font-size: 12px;
-  line-height: 1.55;
+  line-height: 1.52;
 }
 
 .hero {
@@ -130,7 +138,7 @@ h1,
 }
 
 .intro {
-  margin-bottom: 18px;
+  margin: 0 0 18px;
 }
 
 h1 {
@@ -171,9 +179,9 @@ h1 span {
 
 .form-label {
   display: block;
-  margin-bottom: 7px;
-  color: var(--muted);
-  font-size: 11px;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -186,7 +194,7 @@ h1 span {
 input.input {
   width: 100% !important;
   height: auto !important;
-  padding: 10px 12px !important;
+  padding: 11px 12px !important;
   border: 1px solid #aaa08e !important;
   border-radius: 2px !important;
   outline: none !important;
@@ -270,17 +278,34 @@ input.input::placeholder {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 100%;
-  min-height: 48px;
-  padding: 13px 18px !important;
+  gap: 9px !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 50px !important;
+  padding: 14px 18px !important;
   border: 0 !important;
   border-radius: 2px !important;
   background: var(--accent) !important;
   color: #fff !important;
   box-shadow: none !important;
-  font-size: 10px !important;
+  font-size: 11px !important;
   line-height: 1.35 !important;
   cursor: pointer;
+  overflow: hidden !important;
+}
+
+/* Brevo reveals this SVG while submitting. Give it a fixed size so it never expands into the button. */
+.primary-button .progress-indicator__icon {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  max-width: 16px !important;
+  flex: 0 0 16px !important;
+  fill: currentColor !important;
+}
+
+.primary-button .sib-hide-loader-icon {
+  display: none !important;
 }
 
 .primary-button:hover,
@@ -323,7 +348,7 @@ input.input::placeholder {
 
 .included h2 {
   margin-bottom: 9px;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .included ul {
@@ -371,7 +396,7 @@ input.input::placeholder {
   margin-top: 16px;
   padding: 15px 16px;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 18px;
   align-items: center;
   border: 1px solid #b7ad98;
@@ -390,6 +415,7 @@ input.input::placeholder {
 }
 
 .secondary-button {
+  justify-self: end;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -412,10 +438,12 @@ input.input::placeholder {
 
 .right-col {
   align-self: start;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .showcase {
-  margin: 0;
+  margin: 0 !important;
   padding: 8px;
   border: 1px solid #aaa08e;
   background: var(--panel);
@@ -433,7 +461,7 @@ input.input::placeholder {
 
 @media (max-width: 900px) {
   .about-strip {
-    max-width: 100%;
+    width: min(610px, 100%);
   }
 
   .hero {
@@ -455,13 +483,16 @@ input.input::placeholder {
   }
 
   .about-strip {
-    align-items: flex-start;
+    width: 100%;
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 14px;
     padding: 20px 0;
   }
 
   .avatar {
-    width: 62px;
-    height: 62px;
+    width: 78px;
+    min-height: 78px;
+    max-height: 98px;
   }
 
   h1 {
@@ -483,6 +514,7 @@ input.input::placeholder {
 
   .secondary-button {
     width: 100%;
+    justify-self: stretch;
   }
 
   .g-recaptcha {
