@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
 
   <style>
     /* Brevo integration overrides. Structure stays Brevo-native so their JS works. */
@@ -221,6 +221,77 @@
     .signup-card .entry__choice > label > span:last-child p {
       margin: 0 !important;
       padding: 0 !important;
+      color: var(--muted) !important;
+      font-family: "Space Mono", monospace !important;
+      font-size: 10px !important;
+      line-height: 1.5 !important;
+      text-align: left !important;
+    }
+
+  
+    /* v9: hard reset Brevo consent-row positioning */
+    .signup-card .sib-optin .entry__choice {
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .signup-card .sib-optin .entry__choice > label {
+      position: relative !important;
+      display: grid !important;
+      grid-template-columns: 20px minmax(0, 1fr) !important;
+      column-gap: 14px !important;
+      align-items: start !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .signup-card .sib-optin .entry__choice > label > .input_replaced {
+      position: absolute !important;
+      left: 0 !important;
+      top: 0 !important;
+      width: 20px !important;
+      height: 20px !important;
+      margin: 0 !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    .signup-card .sib-optin .entry__choice > label > .checkbox {
+      position: static !important;
+      inset: auto !important;
+      float: none !important;
+      display: block !important;
+      grid-column: 1 !important;
+      grid-row: 1 !important;
+      width: 18px !important;
+      height: 18px !important;
+      min-width: 18px !important;
+      margin: 1px 0 0 !important;
+      padding: 0 !important;
+      transform: none !important;
+    }
+
+    .signup-card .sib-optin .entry__choice > label > span:last-child {
+      position: static !important;
+      float: none !important;
+      display: block !important;
+      grid-column: 2 !important;
+      grid-row: 1 !important;
+      min-width: 0 !important;
+      width: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      transform: none !important;
+      text-indent: 0 !important;
+    }
+
+    .signup-card .sib-optin .entry__choice > label > span:last-child p {
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      text-indent: 0 !important;
       color: var(--muted) !important;
       font-family: "Space Mono", monospace !important;
       font-size: 10px !important;
@@ -530,6 +601,6 @@
 
 
 <script src="https://www.google.com/recaptcha/api.js?render=6LcqwIwtAAAAAGyE0R7BsLx7Podfgdk6ShEBvjth&hl=en" async defer></script>
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>
