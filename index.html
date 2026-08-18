@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=13">
   <style>
     /* Brevo form: one clean override set, no accumulated patches. */
     .signup-card .sib-form,
@@ -38,16 +38,61 @@
       color:var(--error) !important; font-family:"Space Mono",monospace !important; font-size:10px !important;
     }
     .signup-card .consent-label {
-      display:grid !important; grid-template-columns:18px minmax(0,1fr) !important; column-gap:12px !important;
-      align-items:start !important; width:100% !important; margin:0 !important; padding:0 !important; cursor:pointer !important;
+      position: relative !important;
+      display: grid !important;
+      grid-template-columns: 20px minmax(0,1fr) !important;
+      column-gap: 12px !important;
+      align-items: start !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      cursor: pointer !important;
     }
-    .signup-card .consent-label .input_replaced {
-      position:static !important; display:block !important; width:16px !important; height:16px !important;
-      margin:2px 0 0 !important; padding:0 !important; opacity:1 !important; pointer-events:auto !important;
-      appearance:auto !important; -webkit-appearance:checkbox !important; accent-color:#c8664b !important;
+    .signup-card .pixollie-consent-input {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      opacity: 0 !important;
+      overflow: hidden !important;
+      pointer-events: none !important;
+    }
+    .signup-card .pixollie-consent-box {
+      position: relative !important;
+      display: block !important;
+      grid-column: 1 !important;
+      width: 18px !important;
+      height: 18px !important;
+      margin: 1px 0 0 !important;
+      padding: 0 !important;
+      border: 1px solid #9d9484 !important;
+      border-radius: 2px !important;
+      background: #fffdf8 !important;
+      box-sizing: border-box !important;
+    }
+    .signup-card .pixollie-consent-input:focus-visible + .pixollie-consent-box {
+      outline: 2px solid var(--accent) !important;
+      outline-offset: 2px !important;
+    }
+    .signup-card .pixollie-consent-input:checked + .pixollie-consent-box {
+      border-color: var(--accent) !important;
+      background: var(--accent) !important;
+    }
+    .signup-card .pixollie-consent-input:checked + .pixollie-consent-box::after {
+      content: "" !important;
+      position: absolute !important;
+      left: 5px !important;
+      top: 2px !important;
+      width: 4px !important;
+      height: 8px !important;
+      border: solid #fff !important;
+      border-width: 0 2px 2px 0 !important;
+      transform: rotate(45deg) !important;
+      box-sizing: border-box !important;
     }
     .signup-card .consent-copy {
-      display:block !important; min-width:0 !important; margin:0 !important; padding:0 !important;
+      display:block !important; grid-column:2 !important; min-width:0 !important; margin:0 !important; padding:0 !important;
       color:var(--muted) !important; font-family:"Space Mono",monospace !important; font-size:10px !important;
       line-height:1.5 !important; text-align:left !important;
     }
@@ -115,7 +160,8 @@
                       <div class="form__label-row">
                         <div class="entry__choice">
                           <label class="consent-label">
-                            <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN">
+                            <input type="checkbox" class="input_replaced pixollie-consent-input" value="1" id="OPT_IN" name="OPT_IN" required>
+                            <span class="pixollie-consent-box" aria-hidden="true"></span>
                             <span class="consent-copy">Send me Chuck Lite plus occasional PixOllie emails about new assets, freebies and launch discounts. Unsubscribe any time.</span>
                           </label>
                         </div>
@@ -187,6 +233,6 @@
       new MutationObserver(enforce).observe(document.body, {subtree:true, childList:true, characterData:true});
     })();
   </script>
-  <script src="script.js?v=12"></script>
+  <script src="script.js?v=13"></script>
 </body>
 </html>
