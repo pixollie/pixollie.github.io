@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
 
   <style>
     /* Brevo integration overrides. Structure stays Brevo-native so their JS works. */
@@ -325,6 +325,48 @@
       display: block !important;
     }
 
+  
+    /* v11: use the real checkbox instead of Brevo's custom pseudo-element checkbox.
+       This removes the stray giant white tick completely while preserving Brevo submission logic. */
+    .signup-card .sib-optin .entry__choice > label {
+      display: grid !important;
+      grid-template-columns: 18px minmax(0, 1fr) !important;
+      column-gap: 12px !important;
+      align-items: start !important;
+    }
+
+    .signup-card .sib-optin .entry__choice .input_replaced {
+      position: static !important;
+      display: block !important;
+      grid-column: 1 !important;
+      grid-row: 1 !important;
+      width: 16px !important;
+      height: 16px !important;
+      margin: 2px 0 0 !important;
+      padding: 0 !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      appearance: auto !important;
+      -webkit-appearance: checkbox !important;
+      accent-color: #c8664b !important;
+      transform: none !important;
+    }
+
+    .signup-card .sib-optin .entry__choice .checkbox,
+    .signup-card .sib-optin .entry__choice .checkbox::before,
+    .signup-card .sib-optin .entry__choice .checkbox::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    .signup-card .sib-optin .entry__choice > label > span:last-child {
+      grid-column: 2 !important;
+      grid-row: 1 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      min-width: 0 !important;
+    }
+
   </style>
 </head>
 
@@ -627,6 +669,6 @@
 
 
 <script src="https://www.google.com/recaptcha/api.js?render=6LcqwIwtAAAAAGyE0R7BsLx7Podfgdk6ShEBvjth&hl=en" async defer></script>
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=11"></script>
 </body>
 </html>
