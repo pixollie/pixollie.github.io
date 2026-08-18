@@ -4,68 +4,93 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#101217">
+  <meta name="theme-color" content="#efe9dc">
   <title>Chuck Lite Unlocked | PixOllie</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+
   <style>
     .unlock-page {
+      width: min(760px, calc(100% - 28px));
       min-height: 100vh;
-      width: min(820px, calc(100% - 32px));
       margin: 0 auto;
       display: grid;
       place-items: center;
-      padding: 50px 0;
+      padding: 34px 0;
     }
+
     .unlock-card {
       width: 100%;
+      padding: clamp(22px, 5vw, 42px);
+      border: 1px solid var(--line);
+      background: rgba(248, 244, 235, .96);
+      box-shadow: 7px 7px 0 rgba(41, 41, 39, .08);
       text-align: center;
-      border: 4px solid #f3eedc;
-      background: #171a20;
-      box-shadow: 10px 10px 0 #000;
-      padding: clamp(26px, 6vw, 56px);
     }
-    .unlock-card .hero-gif {
-      width: min(460px, 100%);
-      margin: 30px auto;
-      border: 3px solid #08090c;
+
+    .unlock-card h1 {
+      font-size: clamp(28px, 6vw, 46px);
+    }
+
+    .unlock-card p {
+      max-width: 590px;
+      margin: 18px auto;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .unlock-gif {
+      width: min(430px, 100%);
+      margin: 24px auto;
+      padding: 7px;
+      border: 1px solid #aaa08e;
+      background: var(--panel);
       image-rendering: pixelated;
     }
-    .unlock-card h1 {
-      font-size: clamp(30px, 7vw, 58px);
+
+    .download-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: min(480px, 100%);
+      min-height: 48px;
+      padding: 13px 18px;
+      border-radius: 2px;
+      background: var(--accent);
+      color: #fff;
+      font-family: "Press Start 2P", monospace;
+      font-size: 9px;
+      line-height: 1.4;
+      text-decoration: none;
     }
-    .unlock-card p {
-      max-width: 620px;
-      margin: 22px auto;
-      color: #c3c1b7;
+
+    .download-button:hover,
+    .download-button:focus-visible {
+      background: var(--accent-dark);
     }
-    .unlock-card .pixel-button {
-      max-width: 520px;
-      margin: 8px auto 0;
-    }
-    .back-link {
-      display: inline-block;
-      margin-top: 24px;
-      color: #8e949d;
-      font-size: 11px;
+
+    .more-link {
+      display: block;
+      margin-top: 18px;
+      color: var(--olive-dark);
+      font-size: 10px;
     }
   </style>
 </head>
+
 <body>
-  <div class="scanlines" aria-hidden="true"></div>
   <main class="unlock-page">
     <section class="unlock-card">
-      <p class="eyebrow">// DOWNLOAD UNLOCKED</p>
-      <h1>BAM!<br><em>YOU'RE IN.</em></h1>
-      <img class="hero-gif" src="../assets/chuck-lite-showcase.gif" alt="Chuck Lite pixel art animation showcase">
-      <p>
-        Thanks for confirming your email. Chuck Lite is yours.
-        Hit the button below and go make something cool with him.
-      </p>
-      <a class="pixel-button" href="../downloads/Chuck_Lite.zip" download>DOWNLOAD CHUCK LITE ↓</a>
-      <a class="back-link" href="https://pixollie.itch.io/" target="_blank" rel="noopener noreferrer">Want more? Browse the full packs on itch.io ↗</a>
+      <h1>CHUCK LITE<br><span>UNLOCKED.</span></h1>
+      <p>Thanks for confirming your email. Chuck Lite is yours. Hit the button below and go make something cool with him.</p>
+
+      <img class="unlock-gif" src="../assets/chuck-lite-showcase.gif" alt="Chuck Lite pixel art animation showcase">
+
+      <a class="download-button" href="../downloads/Chuck_Lite.zip" download>DOWNLOAD CHUCK LITE ↓</a>
+      <a class="more-link" href="https://pixollie.itch.io/" target="_blank" rel="noopener noreferrer">Browse more PixOllie packs on itch.io ↗</a>
     </section>
   </main>
 </body>

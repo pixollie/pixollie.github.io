@@ -1,14 +1,20 @@
-PIXOLLIE CLEAN V2
+PIXOLLIE.GITHUB.IO - V3
 
-Replace the existing site files with the contents of this folder.
+This version updates the layout based on the cleaner v2 design:
 
-Root files/folders:
-- index.html
-- styles.css
-- script.js
-- assets/
-- download/
-- downloads/
+- Larger About Ollie section above the main offer
+- GIF aligned with the Chuck Lite headline
+- Simplified typography
+- Free pack descriptor combined under the main headline
+- Larger Get Chuck Lite button text
+- No GIF caption
+- Prominent What's Included list below the signup
+- Dedicated More Packs CTA linked to itch.io
+- Top navigation says More Packs
+- External links open in a new tab
+- Brevo + reCAPTCHA remain integrated
+
+Replace the existing repo contents with the CONTENTS of this folder.
 
 Brevo confirmation URL remains:
 https://pixollie.github.io/download/

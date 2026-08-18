@@ -3,51 +3,79 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Free hand-animated pixel art game assets from PixOllie. Get Chuck Lite free and browse full asset packs.">
+  <meta name="description" content="Free hand-animated pixel art game assets from PixOllie. Get Chuck Lite free and browse more pixel art packs.">
   <meta name="theme-color" content="#efe9dc">
   <title>PixOllie | Free Pixel Art Game Assets</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <main class="page-shell">
+  <main class="page-shell" id="top">
     <header class="topbar">
       <a class="brand" href="#top" aria-label="PixOllie home">PIXOLLIE</a>
-      <a class="top-link" href="https://pixollie.itch.io/" target="_blank" rel="noopener noreferrer">PAID PACKS ↗</a>
+      <a class="top-link" href="https://pixollie.itch.io/" target="_blank" rel="noopener noreferrer">MORE PACKS ↗</a>
     </header>
 
-    <section class="hero" id="top">
-      <div class="left-col">
-        <div class="maker">
-          <img class="avatar" src="assets/ollie-avatar.jpg" alt="Pixel art portrait of Ollie, creator of PixOllie">
-          <div>
-            <p class="maker-kicker">HI, I'M OLLIE.</p>
-            <p class="maker-copy">I make hand-animated pixel art packs for indie game developers.</p>
-          </div>
-        </div>
+    <section class="about-strip" aria-labelledby="about-title">
+      <img class="avatar" src="assets/ollie-avatar.jpg" alt="Pixel art portrait of Ollie, creator of PixOllie">
+      <div>
+        <h2 id="about-title">Hi, I'm Ollie.</h2>
+        <p>
+          I make hand-animated pixel art packs for indie game developers.
+          My aim is to give you polished, characterful animation that is quick to drop into a project and easy to build on.
+        </p>
+      </div>
+    </section>
 
+    <section class="hero">
+      <div class="left-col">
         <div class="intro">
-          <p class="eyebrow">FREE PIXEL ASSET PACK</p>
           <h1>CHUCK LITE.<br><span>YOURS FREE.</span></h1>
-          <p class="lede">Six polished character animations, ready to drop into your game.</p>
+          <p class="product-summary">
+            <strong>FREE PIXEL ASSET PACK.</strong>
+            Six polished character animations, ready to drop into your game.
+          </p>
         </div>
 
         <div class="signup-card">
           <div id="error-message" class="sib-form-message-panel pix-message pix-message-error">
-            <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">WTF just happened? Give it another go.</span></div>
-          </div>
-          <div id="success-message" class="sib-form-message-panel pix-message pix-message-success">
-            <div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">BAM! Nearly there. Check your inbox.</span></div>
+            <div class="sib-form-message-panel__text">
+              <span class="sib-form-message-panel__inner-text">WTF just happened? Give it another go.</span>
+            </div>
           </div>
 
-          <form id="sib-form" class="pix-form" method="POST" action="https://a9a54b87.sibforms.com/serve/MUIFANF3NkqaYFzkaDkHHCzogkbGPJ9KiXz8NtFW7BBJLeM-RnuBIdl48c9IzqzenxEKTtLB7DRypTZheB33Ew9lBM1FY931fiwqOZ1LeoHMEwEQDHSQOvtbecbAG_EkGSTA8c5ypOun0KERCM8oAc1vfCdc7Cr8aTsb39jOWqCsW41vnE0OqUe8nXIVL2GggrJ-sMAKYSJV0fLcog==" data-type="subscription">
-            <label class="form-label" for="EMAIL">EMAIL ADDRESS</label>
+          <div id="success-message" class="sib-form-message-panel pix-message pix-message-success">
+            <div class="sib-form-message-panel__text">
+              <span class="sib-form-message-panel__inner-text">BAM! Nearly there. Check your inbox.</span>
+            </div>
+          </div>
+
+          <form id="sib-form"
+                class="pix-form"
+                method="POST"
+                action="https://a9a54b87.sibforms.com/serve/MUIFANF3NkqaYFzkaDkHHCzogkbGPJ9KiXz8NtFW7BBJLeM-RnuBIdl48c9IzqzenxEKTtLB7DRypTZheB33Ew9lBM1FY931fiwqOZ1LeoHMEwEQDHSQOvtbecbAG_EkGSTA8c5ypOun0KERCM8oAc1vfCdc7Cr8aTsb39jOWqCsW41vnE0OqUe8nXIVL2GggrJ-sMAKYSJV0fLcog=="
+                data-type="subscription">
+
+            <label class="form-label" for="EMAIL">Email address</label>
+
             <div class="sib-input">
               <div class="form__entry entry_block">
-                <div class="entry__field"><input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="you@example.com" data-required="true" required></div>
+                <div class="entry__field">
+                  <input
+                    class="input"
+                    type="email"
+                    id="EMAIL"
+                    name="EMAIL"
+                    autocomplete="email"
+                    placeholder="you@example.com"
+                    data-required="true"
+                    required>
+                </div>
                 <label class="entry__error entry__error--primary"></label>
               </div>
             </div>
@@ -57,7 +85,10 @@
                 <label class="consent-label">
                   <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required>
                   <span class="checkbox checkbox_tick_positive"></span>
-                  <span>Send me Chuck Lite plus occasional PixOllie emails about new assets, freebies and launch discounts. Unsubscribe any time.</span>
+                  <span>
+                    Send me Chuck Lite plus occasional PixOllie emails about new assets,
+                    freebies and launch discounts. Unsubscribe any time.
+                  </span>
                 </label>
                 <label class="entry__error entry__error--primary"></label>
               </div>
@@ -65,41 +96,65 @@
 
             <div class="captcha-wrap sib-captcha">
               <div class="form__entry entry_block">
-                <div class="form__label-row"><div class="g-recaptcha sib-visible-recaptcha" id="sib-captcha" data-sitekey="6Ld_aIwtAAAAABVNKoEu3yBIfd12C8ItuTNeimm5" data-callback="handleCaptchaResponse"></div></div>
+                <div class="form__label-row">
+                  <div
+                    class="g-recaptcha sib-visible-recaptcha"
+                    id="sib-captcha"
+                    data-sitekey="6Ld_aIwtAAAAABVNKoEu3yBIfd12C8ItuTNeimm5"
+                    data-callback="handleCaptchaResponse">
+                  </div>
+                </div>
                 <label class="entry__error entry__error--primary"></label>
               </div>
             </div>
 
             <button class="primary-button sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
-              <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-95.833-99.676-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"></path></svg>
+              <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true">
+                <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-95.833-99.676-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"></path>
+              </svg>
               GET CHUCK LITE
             </button>
+
             <input type="text" name="email_address_check" value="" class="input--hidden">
             <input type="hidden" name="locale" value="en">
           </form>
         </div>
 
-        <div class="quick-info" aria-label="Pack contents">
-          <span>6 animations</span><span>PNG + sprite sheets + JSON</span><span>Layered files</span><span>Commercial use</span>
-        </div>
+        <section class="included" aria-labelledby="included-title">
+          <h2 id="included-title">What's included</h2>
+          <ul>
+            <li><strong>6 hand-animated actions</strong><span>Idle, walk, run, hurt, death and pistol attack.</span></li>
+            <li><strong>Game-ready exports</strong><span>PNG sequences, sprite sheets and JSON metadata.</span></li>
+            <li><strong>Flexible source files</strong><span>Layered and flattened versions included.</span></li>
+            <li><strong>Commercial use</strong><span>Use Chuck Lite in your game projects.</span></li>
+          </ul>
+        </section>
 
-        <div class="paid-row">
-          <p>Want the full packs?</p>
-          <a class="secondary-button" href="https://pixollie.itch.io/" target="_blank" rel="noopener noreferrer">BROWSE PIXOLLIE ON ITCH.IO ↗</a>
-        </div>
+        <section class="more-packs" aria-labelledby="more-title">
+          <div>
+            <h2 id="more-title">Want more pixel art?</h2>
+            <p>Browse the full PixOllie range for bigger character packs, enemies, weapons and more animation.</p>
+          </div>
+          <a class="secondary-button" href="https://pixollie.itch.io/" target="_blank" rel="noopener noreferrer">
+            BROWSE MORE PACKS ↗
+          </a>
+        </section>
       </div>
 
       <div class="right-col">
-        <figure class="showcase">
+        <div class="showcase">
           <img src="assets/chuck-lite-showcase.gif" alt="Animated showcase of Chuck the Zombie Hunter pixel art asset pack">
-          <figcaption>Chuck Lite animation preview</figcaption>
-        </figure>
+        </div>
       </div>
     </section>
   </main>
 
   <script>
-    function handleCaptchaResponse() { var event = new Event('captchaChange'); document.getElementById('sib-captcha').dispatchEvent(event); }
+    function handleCaptchaResponse() {
+      var event = new Event('captchaChange');
+      document.getElementById('sib-captcha').dispatchEvent(event);
+    }
+
     window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
     window.LOCALE = 'en';
     window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Nope! Try that again, chief.";
@@ -108,9 +163,17 @@
     window.INVALID_NUMBER = "Nope! Try that again, chief.";
     window.INVALID_DATE = "Please enter a valid date";
     window.REQUIRED_MULTISELECT_MESSAGE = 'Please select at least 1 option';
-    window.translation = {common: {selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected', selectedOption: '{quantity} selected', selectedOptions: '{quantity} selected'}};
+    window.translation = {
+      common: {
+        selectedList: '{quantity} list selected',
+        selectedLists: '{quantity} lists selected',
+        selectedOption: '{quantity} selected',
+        selectedOptions: '{quantity} selected'
+      }
+    };
     var AUTOHIDE = Boolean(0);
   </script>
+
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
   <script src="https://www.google.com/recaptcha/api.js?hl=en"></script>
   <script src="script.js"></script>

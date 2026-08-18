@@ -1,1 +1,13 @@
-const optIn=document.getElementById('OPT_IN');if(optIn){optIn.addEventListener('focus',()=>{const b=optIn.nextElementSibling;if(b)b.style.outline='2px solid #c7674b'});optIn.addEventListener('blur',()=>{const b=optIn.nextElementSibling;if(b)b.style.outline=''})}
+const optIn = document.getElementById('OPT_IN');
+
+if (optIn) {
+  optIn.addEventListener('focus', () => {
+    const box = optIn.nextElementSibling;
+    if (box) box.style.outline = '2px solid #c8664b';
+  });
+
+  optIn.addEventListener('blur', () => {
+    const box = optIn.nextElementSibling;
+    if (box) box.style.outline = '';
+  });
+}
