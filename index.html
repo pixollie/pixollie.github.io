@@ -46,13 +46,13 @@
         <div class="signup-card">
           <div id="error-message" class="sib-form-message-panel pix-message pix-message-error">
             <div class="sib-form-message-panel__text">
-              <span class="sib-form-message-panel__inner-text">WTF just happened? Give it another go.</span>
+              <span class="sib-form-message-panel__inner-text">Hmm, that didn't go through. Already signed up? Check your inbox. Otherwise, give it another go.</span>
             </div>
           </div>
 
           <div id="success-message" class="sib-form-message-panel pix-message pix-message-success">
             <div class="sib-form-message-panel__text">
-              <span class="sib-form-message-panel__inner-text">BAM! Nearly there. Check your inbox.</span>
+              <span class="sib-form-message-panel__inner-text">BAM! Nearly there. Check your inbox to confirm. Nothing there? Check spam/junk.</span>
             </div>
           </div>
 
@@ -95,19 +95,7 @@
               </div>
             </div>
 
-            <div class="captcha-wrap sib-captcha">
-              <div class="form__entry entry_block">
-                <div class="form__label-row">
-                  <div
-                    class="g-recaptcha sib-visible-recaptcha"
-                    id="sib-captcha"
-                    data-sitekey="6Ld_aIwtAAAAABVNKoEu3yBIfd12C8ItuTNeimm5"
-                    data-callback="handleCaptchaResponse">
-                  </div>
-                </div>
-                <label class="entry__error entry__error--primary"></label>
-              </div>
-            </div>
+            <div class="g-recaptcha-v3" data-sitekey="6LcqwIwtAAAAAGyE0R7BsLx7Podfgdk6ShEBvjth" style="display:none"></div>
 
             <button class="primary-button sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
               <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true">
@@ -151,11 +139,6 @@
   </main>
 
   <script>
-    function handleCaptchaResponse() {
-      var event = new Event('captchaChange');
-      document.getElementById('sib-captcha').dispatchEvent(event);
-    }
-
     window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
     window.LOCALE = 'en';
     window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Nope! Try that again, chief.";
@@ -176,7 +159,7 @@
   </script>
 
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js?hl=en"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcqwIwtAAAAAGyE0R7BsLx7Podfgdk6ShEBvjth&hl=en" async defer></script>
   <script src="script.js?v=4"></script>
 </body>
 </html>
