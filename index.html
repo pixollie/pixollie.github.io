@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-  <link rel="stylesheet" href="styles.css?v=13">
+  <link rel="stylesheet" href="styles.css?v=14">
   <style>
     /* Brevo form: one clean override set, no accumulated patches. */
     .signup-card .sib-form,
@@ -107,6 +107,66 @@
     }
     .signup-card .sib-form-message-panel__text { justify-content:flex-start !important; text-align:left !important; }
     .signup-card .sib-notification__icon { display:none !important; }
+  
+    /* v14: isolated native consent row. No Brevo checkbox replacement classes or fake spans. */
+    .signup-card .pix-consent-field {
+      margin: 14px 0 0 !important;
+      padding: 0 !important;
+    }
+    .signup-card .pix-consent-field .form__entry,
+    .signup-card .pix-consent-field .form__label-row {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .signup-card .pix-consent-row {
+      all: revert !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 12px !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .signup-card .pix-consent-native {
+      all: revert !important;
+      box-sizing: border-box !important;
+      display: block !important;
+      position: static !important;
+      flex: 0 0 18px !important;
+      width: 18px !important;
+      height: 18px !important;
+      min-width: 18px !important;
+      margin: 1px 0 0 !important;
+      padding: 0 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transform: none !important;
+      appearance: auto !important;
+      -webkit-appearance: checkbox !important;
+      accent-color: #c8664b !important;
+    }
+    .signup-card .pix-consent-text {
+      all: revert !important;
+      box-sizing: border-box !important;
+      display: block !important;
+      position: static !important;
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      transform: none !important;
+      text-indent: 0 !important;
+      color: #6e6a63 !important;
+      font-family: "Space Mono", monospace !important;
+      font-size: 10px !important;
+      font-weight: 400 !important;
+      line-height: 1.5 !important;
+      text-align: left !important;
+      cursor: pointer !important;
+    }
+
   </style>
 </head>
 <body>
@@ -154,16 +214,12 @@
                       <label class="entry__error entry__error--primary"></label>
                     </div>
                   </div>
-
-                  <div class="brevo-field sib-optin sib-form-block">
+                  <div class="brevo-field sib-optin sib-form-block pix-consent-field">
                     <div class="form__entry entry_mcq">
                       <div class="form__label-row">
-                        <div class="entry__choice">
-                          <label class="consent-label">
-                            <input type="checkbox" class="input_replaced pixollie-consent-input" value="1" id="OPT_IN" name="OPT_IN" required>
-                            <span class="pixollie-consent-box" aria-hidden="true"></span>
-                            <span class="consent-copy">Send me Chuck Lite plus occasional PixOllie emails about new assets, freebies and launch discounts. Unsubscribe any time.</span>
-                          </label>
+                        <div class="pix-consent-row">
+                          <input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" required class="pix-consent-native">
+                          <label for="OPT_IN" class="pix-consent-text">Send me Chuck Lite plus occasional PixOllie emails about new assets, freebies and launch discounts. Unsubscribe any time.</label>
                         </div>
                       </div>
                       <label class="entry__error entry__error--primary"></label>
@@ -233,6 +289,6 @@
       new MutationObserver(enforce).observe(document.body, {subtree:true, childList:true, characterData:true});
     })();
   </script>
-  <script src="script.js?v=13"></script>
+  <script src="script.js?v=14"></script>
 </body>
 </html>
